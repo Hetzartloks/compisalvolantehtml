@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar APK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Descarga la Aplicación</h1>
+        <button id="download-btn">Descargar APK</button>
+    </div>
+
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = '../AAA/archivos/CompisAlVolante.apk';
+            link.download = 'CompisAlVolante.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
