@@ -13,9 +13,11 @@
     </div>
     <div class="video">
         <h1>Video Demostrativo de App</h1>
-        <video controls width="640" height="360" autoplay loop muted>
+        <video id="demo-video" controls width="640" height="360" autoplay loop muted>
             <source src="/archivos/Video.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
         </video>
+        <p id="error-message" style="color: red; display: none;">Error al cargar el video.</p>
     </div>
 
     <script>
@@ -26,6 +28,11 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        });
+
+        const video = document.getElementById('demo-video');
+        video.addEventListener('error', function() {
+            document.getElementById('error-message').style.display = 'block';
         });
     </script>
 </body>
